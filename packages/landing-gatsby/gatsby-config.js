@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Sulfur Social Media Marketing`,
+    title: `The Sulfur Group`,
     description: `Just another TSG landing page.`,
-    author: `@gatsbyjs`,
+    author: `tech@thesulfurgroup.com`,
   },
   plugins: [
     {
