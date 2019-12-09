@@ -28,7 +28,9 @@ export default () => {
   return (
     <ThemeProvider theme={saasClassicTheme}>
       <Fragment>
-        <SEO title="SaaS Classic | A react next landing page" />
+        <SEO 
+          title="Home"
+          description="Just another TSG landing page." />
         <Modal />
         <ResetCSS />
         <GlobalStyle />

@@ -18,6 +18,7 @@ const Footer = ({
   titleStyle,
   logoStyle,
   textStyle,
+  linkStyle
 }) => {
   const Data = useStaticQuery(graphql`
     query {
@@ -39,13 +40,22 @@ const Footer = ({
         <Box className="row" {...row}>
           <Box {...colOne}>
             <Logo
-              href="#"
               logoSrc={LogoImage}
               title="Hosting"
               logoStyle={logoStyle}
             />
-            <Text content="hello@redq.io" {...textStyle} />
-            <Text content="+479-443-9334" {...textStyle} />
+            <p>
+              <span style={linkStyle}>
+                824 Wilshire Blvd<br />
+                Los Angeles, CA 90017
+              </span>
+            </p>
+            <p>
+              <a href="mailto:hello@thesulfurgroup.com" style={linkStyle} title="Email us at Hello@TheSulfurGroup.com">Hello@TheSulfurGroup.com</a><br />
+            </p>
+            <p>
+              <a href="tel:+12135452744" style={linkStyle} title="Call us at +1 (213) 545-2744">+1 (213) 545-2744</a>
+            </p>
           </Box>
           {/* End of footer logo column */}
           <Box {...colTwo}>
@@ -80,6 +90,7 @@ Footer.propTypes = {
   titleStyle: PropTypes.object,
   textStyle: PropTypes.object,
   logoStyle: PropTypes.object,
+  linkStyle: PropTypes.object,
 };
 
 // Footer default style
@@ -90,11 +101,12 @@ Footer.defaultProps = {
     flexWrap: 'wrap',
     ml: '-15px',
     mr: '-15px',
+    mt: '0'
   },
   // Footer col one style
   colOne: {
     width: [1, '35%', '35%', '23%'],
-    mt: [0, '13px'],
+    mt: [0],
     mb: ['30px', 0],
     pl: ['15px', 0],
     pr: ['15px', '15px', 0],
@@ -121,8 +133,9 @@ Footer.defaultProps = {
   },
   // Default logo size
   logoStyle: {
-    width: '130px',
+    width: '150px',
     mb: '15px',
+    mt: '0'
   },
   // widget text default style
   textStyle: {
@@ -130,6 +143,10 @@ Footer.defaultProps = {
     fontSize: '16px',
     mb: '10px',
   },
+  linkStyle: {
+    color: '#666',
+    fontSize: '14px'
+  }
 };
 
 export default Footer;
