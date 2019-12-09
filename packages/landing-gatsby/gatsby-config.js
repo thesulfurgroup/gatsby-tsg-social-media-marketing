@@ -53,7 +53,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Roboto`,
+            family: `Montserrat`,
             variants: [
               `100`,
               `100i`,

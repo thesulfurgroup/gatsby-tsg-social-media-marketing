@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   h1,
@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   section {
@@ -182,7 +182,7 @@ export const ContentWrapper = styled.div`
         }
         &.is-current {
           a {
-            color: #edcd37;
+            color: #ffe401;
           }
         }
         a {
@@ -192,7 +192,7 @@ export const ContentWrapper = styled.div`
           color: #fff;
           transition: 0.15s ease-in-out;
           &:hover {
-            color: #edcd37;
+            color: #ffe401;
           }
         }
       }
