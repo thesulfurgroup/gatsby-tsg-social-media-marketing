@@ -1,0 +1,9 @@
+[build]
+  base = ""
+  publish = "packages/landing-gatsby/public"
+  command = "yarn gatsby-build"
+
+[build.environment]
+  YARN_VERSION = "1.12.1"
+  NODE_VERSION = "12.13.1"
+  
