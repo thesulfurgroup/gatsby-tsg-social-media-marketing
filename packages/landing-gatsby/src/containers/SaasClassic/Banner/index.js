@@ -87,8 +87,7 @@ const BannerSection = ({
             </DiscountWrapper>
             <Heading
               {...title}
-              content="Ultimate Platform to monitor your best workflow."
-            />
+              content="White-Glove Social Media Management by The Sulfur Group" />
             <Text
               {...description}
               content="For Enhanced performance we use LiteSpeed Web Server, HTTP/2, PHP7. We make your website faster, which will help you to increase search ranking!"
