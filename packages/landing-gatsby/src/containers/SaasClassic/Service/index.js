@@ -104,12 +104,12 @@ ServiceSection.defaultProps = {
     flexBox: true,
     flexWrap: 'wrap',
     justifyContent: 'center',
-    ml: ['0', '-15px', '-20px', '-35px', '-35px'],
-    mr: ['0', '-15px', '-20px', '-35px', '-35px'],
+    ml: ['0', '-15px', '-20px'],
+    mr: ['0', '-15px', '-20px'],
   },
   Col: {
-    pl: ['15px', '15px', '25x', '35px', '35px'],
-    pr: ['15px', '15px', '25px', '35px', '35px'],
+    pl: ['15px', '15px', '25x'],
+    pr: ['15px', '15px', '25px'],
     mb: '40px',
   },
   serviceTitleStyle: {

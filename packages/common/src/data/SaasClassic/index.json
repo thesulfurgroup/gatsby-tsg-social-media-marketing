@@ -29,23 +29,27 @@
   "SERVICE_ITEMS": [
     {
       "icon": "flaticon-stopwatch-1",
-      "title": "Fast Performance"
+      "title": "Relevance"
     },
     {
       "icon": "flaticon-prototype",
-      "title": "Prototyping"
+      "title": "Loyalty"
     },
     {
       "icon": "flaticon-code",
-      "title": "Coade Export"
+      "title": "Cohesiveness"
     },
     {
       "icon": "flaticon-vectors",
-      "title": "Vector Editing"
+      "title": "Promotion"
+    },
+    {
+      "icon": "flaticon-next",
+      "title": "Sales"
     },
     {
       "icon": "flaticon-export",
-      "title": "Export Presets"
+      "title": "Leads"
     }
   ],
   "MONTHLY_PRICING_TABLE": [
@@ -330,32 +334,32 @@
   "FEATURES": [
     {
       "icon": "flaticon-hourglass",
-      "title": "App Development",
+      "title": "Strategy",
       "description": "Get your proof tests delivered home collect a sample from the news get design."
     },
     {
       "icon": "flaticon-trophy-1",
-      "title": "10 Times Award",
+      "title": "Schedule",
       "description": "Get your proof tests delivered home collect a sample from the news get design."
     },
     {
       "icon": "flaticon-upload",
-      "title": "Cloud Storage",
+      "title": "Creative",
       "description": "Get your proof tests delivered home collect a sample from the news get design."
     },
     {
       "icon": "flaticon-settings",
-      "title": "Customization",
+      "title": "Engagement",
       "description": "Get your proof tests delivered home collect a sample from the news get design."
     },
     {
       "icon": "flaticon-strategy",
-      "title": "UX Planning",
+      "title": "Social Ads",
       "description": "Get your proof tests delivered home collect a sample from the news get design."
     },
     {
       "icon": "flaticon-conversation",
-      "title": "Customer Support",
+      "title": "Analytics",
       "description": "Get your proof tests delivered home collect a sample from the news get design."
     }
   ],

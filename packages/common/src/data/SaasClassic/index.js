@@ -404,7 +404,7 @@ export const SCREENSHOTS = [
   },
   {
     icon: briefcase,
-    title: 'Integrations',
+    title: 'Case Studies',
     image: Screenshot1,
   },
 ];
