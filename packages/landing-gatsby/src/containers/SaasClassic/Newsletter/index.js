@@ -79,21 +79,13 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
   const handleSubmit = e => {
     e.preventDefault()
 
-    // $("#my-form").submit(function(e) {
-    //   e.preventDefault();
-    
-    //   var $form = $(this);
-    //   $.post($form.attr("action"), $form.serialize()).then(function() {
-    //     alert("Thank you!");
-    //   });
-    // });
-
     var $form = $(e.target);
-    $.post($form.attr("action"), $form.serialize())
-    .then(function() {
-      alert("Thank you for contacting us! We will get in touch soon.");
+    console.log($form.serialize())
+
+    $.post($form.attr("action"), $form.serialize()).then(function() {
+      alert("Thank you!");
+      $form.trigger("reset");
     });
-    $form.trigger("reset");
   };
 
   return (
