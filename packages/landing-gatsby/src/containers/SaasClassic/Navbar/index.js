@@ -62,9 +62,12 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
               menuItems={Data.saasClassicJson.MENU_ITEMS}
               offset={-70}
             />
-            <AnchorLink className="navbar_drawer_button" href="#newsletter_section" offset="0">
+            <a className="navbar_button">
+            <AnchorLink href="#newsletter_section" offset="0">
               <Button {...button} title="GET STARTED" />
             </AnchorLink>
+            </a>
+            
             <Drawer
               width="420px"
               placement="right"
@@ -78,9 +81,6 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
                 drawerClose={true}
                 offset={-100}
               />
-              {/* <a href="#1" className="navbar_drawer_button">
-                <Button {...button} title="GET STARTED" />
-              </a> */}
               <AnchorLink className="navbar_drawer_button" href="#newsletter_section" offset="0">
                 <Button {...button} title="GET STARTED" />
               </AnchorLink>

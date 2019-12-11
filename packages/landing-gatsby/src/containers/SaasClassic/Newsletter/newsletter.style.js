@@ -23,6 +23,34 @@ const NewsletterWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .NetlifyForm {
+    min-width: 320px;
+    input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+      color: #000000;
+      font-size: 16px;
+      line-height: 1.5em;
+      width: 100%;
+      padding: 8px;
+    }
+
+    &__field {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-top: 16px;
+      }
+    }
+
+    &__toplabel {
+      color: #ffffff;
+      display: inline-block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+  }
 `;
 
 export const ContactFormWrapper = styled.div`

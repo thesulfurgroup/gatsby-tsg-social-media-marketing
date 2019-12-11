@@ -83,7 +83,7 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
     console.log($form.serialize())
 
     $.post($form.attr("action"), $form.serialize()).then(function() {
-      alert("Thank you!");
+      alert("Thank you for contacting us! We will get in touch to you soon.");
       $form.trigger("reset");
     });
   };
@@ -98,43 +98,43 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
           </Box>
           <Box {...buttonArea}>
             {/* <ContactFormWrapper>
-              <Input inputType="email" label="Email address" iconPosition="right" isMaterial={true} className="email_input" arial-label="email" onChange={updateFormData} />
-              <Button {...buttonStyle} title="GET ACCESS" onClick={handleSubmit} />
+              <Input inputType="email" label="Email address" iconPosition="right" isMaterial={true} className="email_input" arial-label="email" />
+              <Button {...buttonStyle} title="GET ACCESS" />
             </ContactFormWrapper> */}
 
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <form className="NetlifyForm" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="contact" />
-              <div className="field-1-1">
-                <label for="input-1-1">First name</label>
-                <input type="text" name="first_name" id="input-1-1" />
+              <div className="NetlifyForm__field field-1-1">
+                <label className="NetlifyForm__toplabel">First name</label>
+                <input type="text" name="first_name" required placeholder="Your first name" />
               </div>
-              <div className="field-1-2">
-                <label for="input-1-2">Last name</label>
-                <input type="text" name="last_name" id="input-1-2" />
+              <div className="NetlifyForm__field field-1-2">
+                <label className="NetlifyForm__toplabel">Last name</label>
+                <input type="text" name="last_name" required placeholder="Your last name" />
               </div>
-              <div className="field-1-3">
-                <label for="input-1-3">Company</label>
-                <input type="text" name="company" id="input-1-3" />
+              <div className="NetlifyForm__field field-1-3">
+                <label className="NetlifyForm__toplabel">Company</label>
+                <input type="text" name="company" placeholder="Your company" />
               </div>
-              <div className="field-1-4">
-                <label for="input-1-4">Email address</label>
-                <input type="email" name="email" id="input-1-4" />
+              <div className="NetlifyForm__field field-1-4">
+                <label className="NetlifyForm__toplabel">Email address</label>
+                <input type="email" name="email" required placeholder="Best email to contact you" />
               </div>
-              <div className="field-1-5">
-                <label for="input-1-5">Phone number</label>
-                <input type="text" name="phone" id="input-1-5" />
+              <div className="NetlifyForm__field field-1-5">
+                <label className="NetlifyForm__toplabel">Phone number</label>
+                <input type="text" name="phone" required placeholder="Your phone number" />
               </div>
-              <div className="field-1-6">
-                <label for="input-1-6">Website</label>
-                <input type="text" name="website" id="input-1-6" />
+              <div className="NetlifyForm__field field-1-6">
+                <label className="NetlifyForm__toplabel">Website</label>
+                <input type="url" name="website" placeholder="Do you have website?"/>
               </div>
-              <div className="field-1-7">
-                <label for="input-1-7">Instagram URL</label>
-                <input type="text" name="instagram_url" id="input-1-7" />
+              <div className="NetlifyForm__field field-1-7">
+                <label className="NetlifyForm__toplabel">Instagram URL</label>
+                <input type="url" name="instagram_url" placeholder="Do you have Instagram?" />
               </div>
-              <div>
-                <button type="submit">Submit</button> 
+              <div className="NetlifyForm__field">
+                <button type="submit" class="reusecore__button buttonstyle__ButtonStyle-leGlkG cYyrzA">Submit</button> 
               </div>
             </form>
 
