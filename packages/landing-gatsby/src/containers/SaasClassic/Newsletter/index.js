@@ -103,7 +103,8 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
             </ContactFormWrapper> */}
 
             <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-              <input type="hidden" form-name="contact" />
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
               <div className="field-1-1">
                 <label for="input-1-1">First name</label>
                 <input type="text" name="first_name" id="input-1-1" />
