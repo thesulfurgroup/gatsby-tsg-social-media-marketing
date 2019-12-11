@@ -88,7 +88,7 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
     //   });
     // });
 
-    var $form = $(this);
+    var $form = $(e.target);
     $.post($form.attr("action"), $form.serialize())
     .then(function() {
       alert("Thank you for contacting us! We will get in touch soon.");
@@ -96,7 +96,7 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
   };
 
   return (
-    <Box {...sectionWrapper} as="section">
+    <Box {...sectionWrapper} as="section"  id="newsletter_section">
       <Container>
         <NewsletterWrapper>
           <Box {...textArea}>

@@ -11,6 +11,8 @@ import Container from 'common/src/components/UI/Container';
 import { DrawerContext } from 'common/src/contexts/DrawerContext';
 import ScrollSpyMenu from 'common/src/components/ScrollSpyMenu';
 
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+
 import LogoImage from 'common/src/assets/image/saasClassic/tsg-logo--dark.svg';
 import LogoImageAlt from 'common/src/assets/image/saasClassic/tsg-logo.svg';
 
@@ -60,9 +62,9 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
               menuItems={Data.saasClassicJson.MENU_ITEMS}
               offset={-70}
             />
-            <a href="#1" className="navbar_button">
+            <AnchorLink className="navbar_drawer_button" href="#newsletter_section" offset="0">
               <Button {...button} title="GET STARTED" />
-            </a>
+            </AnchorLink>
             <Drawer
               width="420px"
               placement="right"
@@ -76,9 +78,12 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
                 drawerClose={true}
                 offset={-100}
               />
-              <a href="#1" className="navbar_drawer_button">
+              {/* <a href="#1" className="navbar_drawer_button">
                 <Button {...button} title="GET STARTED" />
-              </a>
+              </a> */}
+              <AnchorLink className="navbar_drawer_button" href="#newsletter_section" offset="0">
+                <Button {...button} title="GET STARTED" />
+              </AnchorLink>
             </Drawer>
           </Box>
         </Box>
