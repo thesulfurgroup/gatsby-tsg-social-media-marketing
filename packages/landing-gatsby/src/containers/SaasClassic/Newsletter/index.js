@@ -87,6 +87,9 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
               <Input inputType="email" label="Email address" iconPosition="right" isMaterial={true} className="email_input" arial-label="email" onChange={updateFormData} />
               <Button {...buttonStyle} title="GET ACCESS" onClick={handleSubmit} />
             </ContactFormWrapper>
+
+            
+
           </Box>
         </NewsletterWrapper>
       </Container>
