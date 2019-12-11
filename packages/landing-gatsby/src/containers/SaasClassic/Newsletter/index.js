@@ -102,7 +102,8 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
               <Button {...buttonStyle} title="GET ACCESS" onClick={handleSubmit} />
             </ContactFormWrapper> */}
 
-            <form id="form-1" name="contact" method="post" data-netlify="true" onSubmit={handleSubmit}>
+            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+              <input type="hidden" form-name="contact" />
               <div className="field-1-1">
                 <label for="input-1-1">First name</label>
                 <input type="text" name="first_name" id="input-1-1" />
