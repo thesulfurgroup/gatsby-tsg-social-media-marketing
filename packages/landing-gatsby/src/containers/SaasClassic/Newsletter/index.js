@@ -93,6 +93,7 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
     .then(function() {
       alert("Thank you for contacting us! We will get in touch soon.");
     });
+    $form.trigger("reset");
   };
 
   return (
