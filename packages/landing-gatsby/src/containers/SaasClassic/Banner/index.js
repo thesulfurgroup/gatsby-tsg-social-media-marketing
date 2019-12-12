@@ -18,7 +18,7 @@ import {
   PlayButton,
   VideoWrapper,
 } from './banner.style';
-import BannerImage from 'common/src/assets/image/saasClassic/banner-image.jpg';
+import BannerImage from 'common/src/assets/image/saasClassic/video-placeholder.png';
 import { ic_play_circle_filled } from 'react-icons-kit/md/ic_play_circle_filled';
 import { play } from 'react-icons-kit/entypo/play';
 
@@ -49,6 +49,8 @@ const BannerSection = ({
   discountText,
   title,
   description,
+  videoModalText,
+  videoModalTitle,
   imageWrapper,
   buttonWrapper,
   button,
@@ -92,7 +94,7 @@ const BannerSection = ({
               {...description}
               content="For Enhanced performance we use LiteSpeed Web Server, HTTP/2, PHP7. We make your website faster, which will help you to increase search ranking!"
             />
-            <Box {...buttonWrapper}>
+            {/* <Box {...buttonWrapper}>
               <a href="#1">
                 <Button {...fillButton} title="FREE TRIAL" />
               </a>
@@ -104,15 +106,26 @@ const BannerSection = ({
                   iconPosition="left"
                 />
               </a>
-            </Box>
+            </Box> */}
           </Box>
           <Box {...imageWrapper}>
             <Fade bottom>
               <VideoModal>
+                <div className="text-content">
+                  <Heading
+                    {...videoModalTitle}
+                    content="White-Glove Social Media Management by The Sulfur Group" />
+                  <Text {...videoModalText}
+                    content="For Enhanced performance we use LiteSpeed Web Server, HTTP/2, PHP7. We make your website faster, which will help you to increase search ranking!"
+                  />
+                  <a href="#1">
+                  <Button {...fillButton} title="FREE TRIAL" />
+                </a>
+                </div>
                 <Image src={BannerImage} alt="banner image" />
-                <PlayButton tabIndex="0" onClick={handleVideoModal}>
+                {/* <PlayButton tabIndex="0" onClick={handleVideoModal}>
                   <Icon icon={play} size={40} />
-                </PlayButton>
+                </PlayButton> */}
               </VideoModal>
             </Fade>
           </Box>
@@ -129,6 +142,8 @@ BannerSection.propTypes = {
   discountText: PropTypes.object,
   title: PropTypes.object,
   description: PropTypes.object,
+  videoModalText: PropTypes.object,
+  videoModalTitle: PropTypes.object,
   imageWrapper: PropTypes.object,
   buttonWrapper: PropTypes.object,
   button: PropTypes.object,
@@ -161,6 +176,20 @@ BannerSection.defaultProps = {
     lineHeight: '1.75',
     mb: '0',
     textAlign: 'center',
+  },
+  videoModalTitle: {
+    fontSize: ['24px'],
+    fontWeight: '700',
+    color: '#000',
+    letterSpacing: '-0.025em',
+    mb: ['15px'],
+    lineHeight: '1.2',
+  },
+  videoModalText: {
+    fontSize: '14px',
+    color: '#000',
+    lineHeight: '1.75',
+    mb: ['30px'],
   },
   discountAmount: {
     fontSize: ['13px', '14px', '14px', '14px', '14px'],

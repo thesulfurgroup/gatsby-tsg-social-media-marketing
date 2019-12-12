@@ -59,6 +59,8 @@ export const VideoModal = styled.div`
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
+
   &:before {
     content: '';
     position: absolute;
@@ -70,7 +72,7 @@ export const VideoModal = styled.div`
       rgb(255, 65, 108) 0%,
       rgb(255, 75, 43) 100%
     );
-    opacity: 0.2;
+    opacity: 0.05;
     pointer-events: none;
   }
 
@@ -78,6 +80,44 @@ export const VideoModal = styled.div`
     max-width: 100%;
     height: auto;
     display: block;
+
+    @media (max-width: 768px) {
+      height: 500px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+    position: absolute;
+    top: 18%;
+    left: 5%;
+    z-index: 1;
+    width: 35%;
+
+    @media (max-width: 991px) {
+      height: 100%;
+      top: 0;
+      left: 0;
+      padding: 30px 30px 10% 30px;
+      width: 100%;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.8);
+      }
+    }
   }
 `;
 
