@@ -97,7 +97,6 @@ function Newsletter({ sectionWrapper, textArea, buttonArea, buttonStyle, title, 
             <Text content="Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt labore dolore" {...description} />
 
             <form className="NetlifyForm" name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
-              <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="contact" />
               <div className="NetlifyForm__fieldgroup">
                 <div className="NetlifyForm__field field-1-1">
