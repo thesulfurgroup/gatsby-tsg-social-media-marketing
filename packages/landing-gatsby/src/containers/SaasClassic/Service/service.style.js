@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+const BoxIcon = styled.div`
+  width: 50px;
+  height: 50px;
+  flex-basis: 50px;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+  
+`
+
 const SectionWrapper = styled.section`
   padding: 75px 0 0 0;
 
@@ -133,5 +143,9 @@ const SectionWrapper = styled.section`
     }
   }
 `;
+
+
+
+export {BoxIcon}
 
 export default SectionWrapper;

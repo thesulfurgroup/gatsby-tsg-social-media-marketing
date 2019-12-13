@@ -1,4 +1,4 @@
-import Screenshot1 from '../../assets/image/saasClassic/screen-1.png';
+import Screen1 from '../../assets/image/saasClassic/screen-1.jpg';
 
 import AuthorOne from '../../assets/image/saasClassic/author-1.jpg';
 import AuthorTwo from '../../assets/image/saasClassic/author-2.jpg';
@@ -390,22 +390,22 @@ export const SCREENSHOTS = [
   {
     icon: ic_monetization_on,
     title: 'Budget Overview',
-    image: Screenshot1,
+    image: Screen1,
   },
   {
     icon: ic_settings,
     title: 'Create & Adjust',
-    image: Screenshot1,
+    image: Screen1,
   },
   {
     icon: pieChart,
     title: 'View Reports',
-    image: Screenshot1,
+    image: Screen1,
   },
   {
     icon: briefcase,
     title: 'Case Studies',
-    image: Screenshot1,
+    image: Screen1,
   },
 ];
 

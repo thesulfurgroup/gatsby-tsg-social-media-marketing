@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import Box from 'reusecore/src/elements/Box';
 import Text from 'reusecore/src/elements/Text';
 import Heading from 'reusecore/src/elements/Heading';
+import Image from 'gatsby-image';
 import Container from 'common/src/components/UI/Container';
-import SectionWrapper from './service.style';
+import SectionWrapper, {BoxIcon} from './service.style';
 
 const ServiceSection = ({
   secTitleWrapper,
@@ -22,6 +23,13 @@ const ServiceSection = ({
         SERVICE_ITEMS {
           title
           icon
+          icon_url {
+            childImageSharp {
+              fluid(quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -51,7 +59,11 @@ const ServiceSection = ({
             >
               <Box className="service_item">
                 <Box className="service_icon">
-                  <i className={item.icon} />
+                  {/* <i className={item.icon} /> */}
+                  {/* <span>{item.icon_url}</span> */}
+                  <BoxIcon>
+                    <Image fluid={item.icon_url.childImageSharp.fluid} />
+                  </BoxIcon>
                 </Box>
                 <Heading as="h3" content={item.title} {...serviceTitleStyle} />
               </Box>

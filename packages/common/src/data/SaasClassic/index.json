@@ -29,27 +29,33 @@
   "SERVICE_ITEMS": [
     {
       "icon": "flaticon-stopwatch-1",
-      "title": "Relevance"
+      "title": "Relevance",
+      "icon_url": "../../assets/image/saasClassic/service-relevance.png"
     },
     {
       "icon": "flaticon-prototype",
-      "title": "Loyalty"
+      "title": "Loyalty",
+      "icon_url": "../../assets/image/saasClassic/service-loyalty.png"
     },
     {
       "icon": "flaticon-code",
-      "title": "Cohesiveness"
+      "title": "Cohesiveness",
+      "icon_url": "../../assets/image/saasClassic/service-cohesiveness.png"
     },
     {
       "icon": "flaticon-vectors",
-      "title": "Promotion"
+      "title": "Promotion",
+      "icon_url": "../../assets/image/saasClassic/service-promotion.png"
     },
     {
       "icon": "flaticon-next",
-      "title": "Sales"
+      "title": "Sales",
+      "icon_url": "../../assets/image/saasClassic/service-sales.png"
     },
     {
       "icon": "flaticon-export",
-      "title": "Leads"
+      "title": "Leads",
+      "icon_url": "../../assets/image/saasClassic/service-leads.png"
     }
   ],
   "MONTHLY_PRICING_TABLE": [
