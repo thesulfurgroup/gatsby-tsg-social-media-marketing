@@ -1,4 +1,4 @@
-import Screen1 from '../../assets/image/saasClassic/screen-1.jpg';
+import Screen1 from '../../assets/image/saasClassic/screen-01.jpg';
 
 import AuthorOne from '../../assets/image/saasClassic/author-1.jpg';
 import AuthorTwo from '../../assets/image/saasClassic/author-2.jpg';
