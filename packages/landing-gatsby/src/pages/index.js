@@ -29,8 +29,7 @@ export default () => {
     <ThemeProvider theme={saasClassicTheme}>
       <Fragment>
         <SEO 
-          title="Social Media Marketing"
-          description="Just another TSG landing page." />
+          title="Social Media Marketing" />
         <Modal />
         <ResetCSS />
         <GlobalStyle />

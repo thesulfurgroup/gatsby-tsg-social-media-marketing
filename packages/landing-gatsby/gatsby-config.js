@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `The Sulfur Group`,
-    description: `Just another TSG landing page.`,
+    description: "White-Glove Social Media Management by The Sulfur Group",
+    url: "https://socialmediamarketing.thesulfurgroup.com",
+    image: "/seo-image.png",
     author: `tech@thesulfurgroup.com`,
+    twitterUsername: "@thesulfurgroup",
   },
   plugins: [
     {
