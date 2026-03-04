@@ -2,15 +2,23 @@
   "name": "react-next-landing",
   "version": 2,
   "builds": [
-    { "src": "packages/landing/package.json", "use": "@now/static-build" }
+    {
+      "src": "packages/landing/package.json",
+      "use": "@now/static-build"
+    }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/packages/landing/$1",
       "headers": {
-        "x-request-path": "$1"
-      }
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      },
+      "dest": "/packages/landing/$1"
     }
   ]
 }
