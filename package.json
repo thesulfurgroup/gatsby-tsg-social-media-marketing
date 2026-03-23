@@ -64,6 +64,7 @@
 		]
 	},
 	"resolutions": {
-		"**/immutable": "4.3.8"
+		"**/immutable": "4.3.8",
+		"**/minimatch": "^3.1.5"
 	}
 }
