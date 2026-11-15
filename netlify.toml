@@ -16,3 +16,8 @@
     X-Frame-Options = "DENY"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Isolated PR previews match the validated Linux build without changing production.
+[context.deploy-preview.environment]
+  NODE_VERSION = "20.18.1"
+  NODE_OPTIONS = "--openssl-legacy-provider"
