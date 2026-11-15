@@ -1,22 +1,13 @@
-name: Isolated Linux security validation
+name: Linux build and security checks
 on:
   pull_request:
     branches: [master]
-    paths:
-      - package.json
-      - yarn.lock
-      - .github/workflows/security-validation.yml
 permissions:
   contents: read
 jobs:
   linux-build:
-    if: github.head_ref == 'fix/node-forge-1.4.1'
     runs-on: ubuntu-22.04
     timeout-minutes: 20
-    strategy:
-      fail-fast: false
-      matrix:
-        revision: [baseline, patched]
     env:
       GATSBY_TELEMETRY_DISABLED: '1'
       CI: 'true'
@@ -25,17 +16,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ matrix.revision == 'baseline' && '19263b04bea350cfaaaa6b666b201d0c416a72af' || github.event.pull_request.head.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '20.18.1'
+      - name: Verify hosting and CI runtime match
+        run: |
+          node <<'JS'
+          const assert = require('assert');
+          const config = require('fs').readFileSync('netlify.toml', 'utf8');
+          assert(config.includes('NODE_VERSION = "20.18.1"'));
+          assert(config.includes('NODE_OPTIONS = "--openssl-legacy-provider"'));
+          assert(!config.includes('[context.deploy-preview.environment]'), 'Preview must use the same runtime as production');
+          assert.equal(process.version, 'v20.18.1');
+          JS
       - name: Install Yarn and frozen dependencies
         run: |
           npm install --global yarn@1.22.22
           yarn install --frozen-lockfile --non-interactive
-      - name: Verify patched dependency and consumers
-        if: matrix.revision == 'patched'
+      - name: Font and patched dependency checks
         run: |
           yarn test:font-merge
           node <<'JS'
