@@ -37,6 +37,7 @@ jobs:
       - name: Verify patched dependency and consumers
         if: matrix.revision == 'patched'
         run: |
+          yarn test:font-merge
           node <<'JS'
           const assert = require('assert');
           const path = require('path');
