@@ -1,0 +1,56 @@
+name: Isolated Linux security validation
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - package.json
+      - yarn.lock
+      - .github/workflows/security-validation.yml
+permissions:
+  contents: read
+jobs:
+  linux-build:
+    if: github.head_ref == 'fix/node-forge-1.4.1'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        revision: [baseline, patched]
+    env:
+      GATSBY_TELEMETRY_DISABLED: '1'
+      CI: 'true'
+      NODE_OPTIONS: --openssl-legacy-provider
+      HUSKY_SKIP_INSTALL: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.revision == 'baseline' && '19263b04bea350cfaaaa6b666b201d0c416a72af' || github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.18.1'
+      - name: Install Yarn and frozen dependencies
+        run: |
+          npm install --global yarn@1.22.22
+          yarn install --frozen-lockfile --non-interactive
+      - name: Verify patched dependency and consumers
+        if: matrix.revision == 'patched'
+        run: |
+          node <<'JS'
+          const assert = require('assert');
+          const path = require('path');
+          const forge = require('node-forge');
+          assert.equal(require('node-forge/package.json').version, '1.4.1');
+          for (const parent of ['selfsigned', 'google-p12-pem']) {
+            const resolved = require.resolve('node-forge/package.json', {paths:[path.dirname(require.resolve(parent))]});
+            assert.equal(require(resolved).version, '1.4.1');
+          }
+          const pems = require('selfsigned').generate([{name:'commonName',value:'localhost'}], {days:1,keySize:2048,algorithm:'sha256'});
+          const cert = forge.pki.certificateFromPem(pems.cert);
+          assert(cert.verify(cert));
+          console.log('Patched Forge and selfsigned smoke test passed');
+          JS
+          yarn list --pattern node-forge
+      - name: Build Gatsby without deploying
+        run: yarn gatsby-build
