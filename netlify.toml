@@ -5,7 +5,8 @@
 
 [build.environment]
   YARN_VERSION = "1.22.22"
-  NODE_VERSION = "20.18.0"
+  NODE_VERSION = "20.18.1"
+  NODE_OPTIONS = "--openssl-legacy-provider"
 
 [[headers]]
   for = "/*"

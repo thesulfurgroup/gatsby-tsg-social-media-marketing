@@ -1,0 +1,12 @@
+diff --git a/node_modules/gatsby-plugin-prefetch-google-fonts/merge-css.js b/node_modules/gatsby-plugin-prefetch-google-fonts/merge-css.js
+--- a/node_modules/gatsby-plugin-prefetch-google-fonts/merge-css.js
++++ b/node_modules/gatsby-plugin-prefetch-google-fonts/merge-css.js
+@@ -90,7 +90,7 @@
+ 
+ function createCssString(str, obj) {
+   for (var i in obj) {
+-    str = str.replace(obj[i].line, obj[i].newLine);
++    str = str.replace(obj[i].line, obj[i].newLine || obj[i].line);
+   }
+ 
+   return str;
