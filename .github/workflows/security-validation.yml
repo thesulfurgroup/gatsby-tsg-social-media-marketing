@@ -37,6 +37,7 @@ jobs:
       - name: Font and patched dependency checks
         run: |
           yarn test:font-merge
+          node scripts/test-tooling-patches.js
           node <<'JS'
           const assert = require('assert');
           const path = require('path');
