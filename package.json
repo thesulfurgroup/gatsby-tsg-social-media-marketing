@@ -69,6 +69,11 @@
 	"resolutions": {
 		"**/immutable": "4.3.8",
 		"**/minimatch": "^3.1.5",
-		"**/node-forge": "1.4.1"
+		"**/node-forge": "1.4.3",
+		"**/handlebars": "4.7.10",
+		"**/@graphql-tools/url-loader/form-data": "4.0.6",
+		"**/@types/node-fetch/form-data": "4.0.6",
+		"**/request/form-data": "2.5.6",
+		"**/codesandboxer/form-data": "2.5.6"
 	}
 }

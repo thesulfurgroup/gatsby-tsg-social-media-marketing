@@ -37,18 +37,23 @@ jobs:
       - name: Font and patched dependency checks
         run: |
           yarn test:font-merge
+          node scripts/test-tooling-patches.js
           node <<'JS'
           const assert = require('assert');
           const path = require('path');
           const forge = require('node-forge');
-          assert.equal(require('node-forge/package.json').version, '1.4.1');
+          assert.equal(require('node-forge/package.json').version, '1.4.3');
           for (const parent of ['selfsigned', 'google-p12-pem']) {
             const resolved = require.resolve('node-forge/package.json', {paths:[path.dirname(require.resolve(parent))]});
-            assert.equal(require(resolved).version, '1.4.1');
+            assert.equal(require(resolved).version, '1.4.3');
           }
           const pems = require('selfsigned').generate([{name:'commonName',value:'localhost'}], {days:1,keySize:2048,algorithm:'sha256'});
           const cert = forge.pki.certificateFromPem(pems.cert);
           assert(cert.verify(cert));
+          const client = forge.tls.createConnection({server:false, tlsDataReady:()=>{}, closed:()=>{}, error:()=>{}});
+          client.handshake();
+          client.process(forge.util.hexToBytes('15030100020100'));
+          client.process(forge.util.hexToBytes('160301000402000000'));
           console.log('Patched Forge and selfsigned smoke test passed');
           JS
           yarn list --pattern node-forge
